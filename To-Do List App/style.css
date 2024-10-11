@@ -1,0 +1,234 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(90deg, rgb(25 18 175) 0%, rgb(47 47 119) 46%, rgb(8 78 163) 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* Change to flex-start for better alignment */
+  padding: 10px 0;
+  min-height: 100vh;
+  /* Use min-height instead of height */
+  margin: 20px 0;
+  overflow-y: auto;
+  /* Allow scrolling if content exceeds the viewport */
+}
+
+/* To-Do List Container */
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 35rem;
+  padding: 28px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6397ff 0%, #8a8eff 100%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* Soft shadow for depth */
+}
+
+
+/* To-Do Header */
+.todo-header {
+  font-weight: bold;
+  text-decoration: underline;
+  margin: auto;
+  padding: 1rem;
+  color: white;
+}
+
+/* Form Styles */
+#todo-form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+@media (min-width: 1024px) {
+  #todo-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* User Input */
+#todo-input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid black;
+  background-color: #e2e8f0;
+  transition: box-shadow 0.3s ease;
+  /* Added smooth transition */
+}
+
+#todo-input:focus {
+  box-shadow: 0 0 5px rgba(47, 47, 119, 0.8);
+  /* Focus state for better interaction */
+}
+
+/* Submit Button */
+#submit-btn {
+  margin: auto;
+  padding: 12px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #4c7dff 0%, #6699ff 100%);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Soft shadow for better depth */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#submit-btn:hover {
+  background: linear-gradient(135deg, #6699ff 0%, #80b3ff 100%);
+  transform: scale(1.05);
+  /* Slight hover effect */
+}
+
+/* To-Do List Item */
+#todo-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.display-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(135deg, #336bb9 0%, #4345c7 100%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Added shadow for depth */
+  transition: background 0.3s ease;
+  /* Transition for smoother changes */
+}
+
+.display-cont:hover {
+  background: linear-gradient(135deg, #5585e2 0%, #7376d8 100%);
+}
+
+.display-cont p {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+
+/* Button Container */
+.btns {
+  display: flex;
+  column-gap: 8px;
+}
+
+/* Remove & Edit Buttons */
+.edit-btn {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  background-color: #28a745;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #31d455;
+  transform: scale(1.05);
+}
+
+.remove-btn {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  color: white;
+  background-color: #cf1c2e;
+}
+
+.remove-btn:hover {
+  background-color: #e04151;
+  transform: scale(1.05);
+}
+
+/* Clear List Button */
+#clear-btn {
+  margin: auto;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #4c7dff 0%, #6699ff 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#clear-btn:hover {
+  background: linear-gradient(135deg, #6699ff 0%, #80b3ff 100%);
+  transform: scale(1.05);
+  /* Hover effect for button */
+}
+
+@media screen and (max-width: 768px) {
+
+  .main-container {
+    padding: 300px 0;
+    margin: 100px 0;
+  }
+
+  .todo-container {
+    padding: 100px 28px;
+  }
+
+  #submit-btn {
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+
+  .remove-btn,
+  .edit-btn {
+    font-size: 20px;
+  }
+
+  #clear-btn {
+    font-size: 15px;
+  }
+
+  .main-container {
+    padding: 50px;
+    margin: auto;
+  }
+
+  .todo-container {
+    padding: 20px;
+  }
+}
